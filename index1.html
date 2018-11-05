@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #man {
+            width: 200px;
+            position: absolute;
+            top: 300px;
+            left: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="up">up</button>
+    <button id="down">down</button>
+    <button id="left">left</button>
+    <button id="right">right</button> 
+    <img src="man.png" alt="" id="man">
+    <script>
+        function getId(a) {
+            return document.getElementById(a);
+        }
+        getId('up').onclick = function () {
+            let goUp = getId('man').offsetTop;
+            console.log(goUp);
+            getId('man').style.top = goUp - 10 + "px";
+        }
+        getId('left').onclick = function () {
+            let goLeft = getId('man').offsetLeft;
+            getId('man').style.left = goLeft - 10 + "px";
+        }
+          getId('right').onclick = function () {
+            let goRight = getId('man').offsetLeft;
+            getId('man').style.left = goRight + 10 + "px";
+        }
+         getId('down').onclick = function () {
+            let goDown = getId('man').offsetTop;
+            console.log(goDown);
+            getId('man').style.top = goDown + 10 + "px";
+        }
+    </script>
+</body>
+
+</html>
